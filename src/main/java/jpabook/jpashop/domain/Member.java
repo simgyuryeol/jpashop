@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    //@NotEmpty //api를 사용할 때 name값 필수로 사용. 하지만 어떤 api는 필수가 아닐 수 있으므로 따로 dto를 만들어 설정하는 것이 좋다.
     private String name;
 
     @Embedded //Embedded나 Embeddable 둘중 하나만 있어도 된다
